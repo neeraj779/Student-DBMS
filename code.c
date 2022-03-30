@@ -92,7 +92,7 @@ void addStudentInDataBase()
     s_StudentInfo addStudentInfoInDataBase = {0};
     FILE *fp = NULL;
     int status = 0;
-    fp = fopen("data.txt", "ab+");
+    fp = fopen("data.bin", "ab+");
     if (fp == NULL)
     {
         printf("File is not opened\n");
@@ -159,7 +159,7 @@ void searchStudent()
     int studentId = 0;
     s_StudentInfo addStudentInfoInDataBase = {0};
     FILE *fp = NULL;
-    fp = fopen("data.txt", "rb");
+    fp = fopen("data.bin", "rb");
     if (fp == NULL)
     {
         printf("\n\t\t\tFile is not opened\n");
@@ -172,7 +172,7 @@ void searchStudent()
         printf("\n\t\t\tFacing issue while reading file\n");
         exit(1);
     }
-    printf("\n\n\t\t\tEnter Student ID NO to search:");
+    printf("\n\n\t\t\tEnter Student Register No. to search: ");
     fflush(stdin);
     scanf("%u", &studentId);
     while (fread(&addStudentInfoInDataBase, sizeof(addStudentInfoInDataBase), 1, fp))
@@ -208,7 +208,7 @@ void viewStudent()
     FILE *fp = NULL;
     unsigned int countStudent = 1;
     headMessage("VIEW STUDENT DETAILS");
-    fp = fopen("data.txt", "rb");
+    fp = fopen("data.bin", "rb");
     if (fp == NULL)
     {
         printf("File is not opened\n");
@@ -250,7 +250,7 @@ void deleteStudent()
     FILE *fp = NULL;
     FILE *tmpFp = NULL;
     headMessage("Delete Student Details");
-    fp = fopen("data.txt", "rb");
+    fp = fopen("data.bin", "rb");
     if (fp == NULL)
     {
         printf("File is not opened\n");
@@ -265,7 +265,7 @@ void deleteStudent()
     }
     fread(&fileHeaderInfo, sizeof(sFileHeader), 1, fp);
     fwrite(&fileHeaderInfo, sizeof(sFileHeader), 1, tmpFp);
-    printf("\n\t\t\tEnter Student ID NO. for delete:");
+    printf("\n\t\t\tEnter Student Register No. for delete:");
     scanf("%d", &studentDelete);
     while (fread(&addStudentInfoInDataBase, sizeof(addStudentInfoInDataBase), 1, fp))
     {
@@ -281,8 +281,8 @@ void deleteStudent()
     (found) ? printf("\n\t\t\tRecord deleted successfully.....") : printf("\n\t\t\tRecord not found");
     fclose(fp);
     fclose(tmpFp);
-    remove("data.txt");
-    rename("tmp.bin", "data.txt");
+    remove("data.bin");
+    rename("tmp.bin", "data.bin");
 }
 void updateCredential(void)
 {
@@ -291,7 +291,7 @@ void updateCredential(void)
     unsigned char userName[30] = {0};
     unsigned char password[20] = {0};
     headMessage("Update Credential");
-    fp = fopen("data.txt", "rb+");
+    fp = fopen("data.bin", "rb+");
     if (fp == NULL)
     {
         printf("File is not opened\n");
@@ -368,8 +368,8 @@ void login()
     int L = 0;
     sFileHeader fileHeaderInfo = {0};
     FILE *fp = NULL;
-    headMessage("Login");
-    fp = fopen("data.txt", "rb");
+    headMessage("Sathyabama Staff Login");
+    fp = fopen("data.bin", "rb");
     if (fp == NULL)
     {
         printf("File is not opened\n");
@@ -379,9 +379,9 @@ void login()
     fclose(fp);
     do
     {
-        printf("\n\n\n\t\t\t\tUsername:");
+        printf("\n\n\n\t\t\t\tUsername: ");
         fgets(userName, 30, stdin);
-        printf("\n\t\t\t\tPassword:");
+        printf("\n\t\t\t\tPassword: ");
         fgets(password, 20, stdin);
         if ((!strcmp(userName, fileHeaderInfo.username)) && (!strcmp(password, fileHeaderInfo.password)))
         {
@@ -419,10 +419,10 @@ void init()
     const char defaultUsername[] = "Techzamia\n";
     const char defaultPassword[] = "Sathyabama\n";
     sFileHeader fileHeaderInfo = {0};
-    status = isFileExists("data.txt");
+    status = isFileExists("data.bin");
     if (!status)
     {
-        fp = fopen("data.txt", "wb");
+        fp = fopen("data.bin", "wb");
         if (fp != NULL)
         {
             strncpy(fileHeaderInfo.password, defaultPassword, sizeof(defaultPassword));
