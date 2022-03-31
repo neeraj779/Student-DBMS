@@ -32,10 +32,10 @@
 
 # Screenshots
  * login menu screenshot
-<br /> ![login menu](login.png)
+![login menu](login.png)
 
  * Add student menu screenshot 
-<br /> ![add menu](add.png)
+![add menu](add.png)
 
  * credentail update menu screenshot<br />
-<br /> ![pass_update menu](pass_update.png)
+![pass_update](pass_update.png)
