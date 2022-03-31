@@ -100,7 +100,7 @@ void addStudentInDataBase()
     }
     headMessage("Add New Students");
     printf("\n\n\t\t\tENTER STUDENT DETAILS BELOW : ");
-    printf("\n\t\t\t---------------------------------------------------------------------------\n");
+    printf("\n\t\t\t--------------------------------------------------------------------------\n");
     printf("\n\t\t\tRegister No  = ");
     fflush(stdin);
     scanf("%u", &addStudentInfoInDataBase.register_id);
