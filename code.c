@@ -188,8 +188,8 @@ void searchStudent()
         printf("\n\t\t\tStudent id = %d\n", addStudentInfoInDataBase.register_id);
         printf("\n\t\t\tStudent name = %s", addStudentInfoInDataBase.studentName);
         printf("\t\t\tFather Name = %s", addStudentInfoInDataBase.fatherName);
-        printf("\n\t\t\tStudent Adaysress = %s", addStudentInfoInDataBase.studentAdaysr);
-        printf("\t\t\tStudent Admission Date(day/month/year) =  (%d/%d/%d)", addStudentInfoInDataBase.studentJoiningDate.days,
+        printf("\n\t\t\tStudent Address = %s", addStudentInfoInDataBase.studentAdaysr);
+        printf("\t\t\tStudent Admission Date =  (%d/%d/%d)", addStudentInfoInDataBase.studentJoiningDate.days,
                addStudentInfoInDataBase.studentJoiningDate.month, addStudentInfoInDataBase.studentJoiningDate.year);
     }
     else
