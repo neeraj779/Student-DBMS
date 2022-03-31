@@ -315,7 +315,7 @@ void updateCredential(void)
     fwrite(&fileHeaderInfo, sizeof(sFileHeader), 1, fp);
     fclose(fp);
     printf("\n\t\t\tYour Password has been changed successfully");
-    printf("\n\t\t\ttLogin Again:");
+    printf("\n\t\t\tLogin Again:");
     fflush(stdin);
     getchar();
     exit(1);
