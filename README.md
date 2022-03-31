@@ -32,7 +32,7 @@
 
 # Screenshots
  * login menu screenshot <br />
-![Flappy Bird](login.png)
+<br /> ![Flappy Bird](login.png)
 
  * Add student menu screenshot <br />
 ![Flappy Bird](add.png)
