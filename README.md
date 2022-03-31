@@ -19,8 +19,8 @@ Hi!
 
 * In this project i have used some of following C/C++ concepts and I have compiled my project with GCC compiler :
 
-:one: fopen
-:two: fread
+:one: fopen <br />
+:two: fread <br />
 :three: fwrite
 * functions
 * loops
