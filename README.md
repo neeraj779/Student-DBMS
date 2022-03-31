@@ -31,6 +31,11 @@
 - This project is a Command line utility or console application whic usese C programming language.
 
 # Screenshots
- * Add student menu
+ * login menu screenshot
+![Flappy Bird](login.png)
 
+ * Add student menu screenshot
 ![Flappy Bird](add.png)
+
+ * credentail update menu screenshot
+![Flappy Bird](pass_update.png)
