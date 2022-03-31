@@ -2,6 +2,6 @@
 
 ---
 
-<center><img src=project_banner.png wigth=400 height=280 alt="banner"></img><center>
+<center><img src=project_banner.png wigth=400 height=280 alt="banner"></img></center>
 
 ---
