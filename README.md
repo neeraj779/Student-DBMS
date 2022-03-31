@@ -2,6 +2,8 @@
 
 ---
 
-<img align="center" src=project_banner.png wigth=400 height=350 alt="banner"></img>
+<!-- <img align="center" src=project_banner.png wigth=400 height=350 alt="banner"></img> -->
+
+![image of voice assitant](project_banner.png)
 
 ---
