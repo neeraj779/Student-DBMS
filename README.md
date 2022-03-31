@@ -29,3 +29,8 @@
 &emsp;:seven:if else<br />
 
 - This project is a Command line utility or console application whic usese C programming language.
+
+# Screenshots
+ * Add student menu
+
+![Flappy Bird](add.png)
