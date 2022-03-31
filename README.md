@@ -17,16 +17,14 @@ Hi!
 
 *  I have included login screen in Sathyabama Student Record System, So that only Sathyabama Staffs will be able to login to this application in order to protect the data.
 
-* This project is a Command line utility or console application whic usese C programming language. 
+* In this project i have used some of following C/C++ concepts and I have compiled my project with GCC compiler :
 
-
-In this project i have used some of following C/C++ concepts and I have compiled my project with GCC compiler :
-
-* fopen
-* fread
-* fwrite
+:one: fopen
+:two: fread
+:three: fwrite
 * functions
 * loops
 * struct datatype
 * if else
 
+* This project is a Command line utility or console application whic usese C programming language. 
