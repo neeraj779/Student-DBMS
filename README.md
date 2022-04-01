@@ -2,7 +2,7 @@
 
 ---
 
-![image of voice assitant](/assets/projectBanner.png)
+![image of voice assitant](/assests/projectBanner.png)
 
 ---
 
