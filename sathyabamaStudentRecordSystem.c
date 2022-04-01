@@ -144,7 +144,7 @@ void addStudentInDataBase()
     } while (!status);
     do
     {
-        printf("\n\t\t\tEnter dob of birth : ");
+        printf("\n\t\t\tEnter date of birth : ");
         scanf("%d/%d/%d", &addStudentInfoInDataBase.studentDob.days, &addStudentInfoInDataBase.studentDob.month, &addStudentInfoInDataBase.studentDob.year);
         status = isValidaysate(&addStudentInfoInDataBase.studentDob);
         if (!status)
