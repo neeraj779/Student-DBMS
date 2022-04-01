@@ -23,8 +23,8 @@ typedef struct
     unsigned int register_id;
     char fatherName[50];
     char studentName[50];
-    char studentAdaysr[300];
-    dob studentJoiningdob;
+    char studentAddress[300];
+    dob studentDob;
 } sathyabama_student_info;
 
 void printMessageCenter(const char *message)
@@ -135,8 +135,8 @@ void addStudentInDataBase()
     {
         printf("\n\t\t\tStudent Address  = ");
         fflush(stdin);
-        fgets(addStudentInfoInDataBase.studentAdaysr, 50, stdin);
-        status = isNameValid(addStudentInfoInDataBase.studentAdaysr);
+        fgets(addStudentInfoInDataBase.studentAddress, 50, stdin);
+        status = isNameValid(addStudentInfoInDataBase.studentAddress);
         if (!status)
         {
             printf("\n\t\t\tName contain invalid character. Please enter again.");
@@ -145,8 +145,8 @@ void addStudentInDataBase()
     do
     {
         printf("\n\t\t\tEnter dob of birth : ");
-        scanf("%d/%d/%d", &addStudentInfoInDataBase.studentJoiningdob.days, &addStudentInfoInDataBase.studentJoiningdob.month, &addStudentInfoInDataBase.studentJoiningdob.year);
-        status = isValidaysate(&addStudentInfoInDataBase.studentJoiningdob);
+        scanf("%d/%d/%d", &addStudentInfoInDataBase.studentDob.days, &addStudentInfoInDataBase.studentDob.month, &addStudentInfoInDataBase.studentDob.year);
+        status = isValidaysate(&addStudentInfoInDataBase.studentDob);
         if (!status)
         {
             printf("\n\t\t\tPlease enter a valid dob.\n");
@@ -190,9 +190,9 @@ void searchStudent()
         printf("\n\t\t\tStudent id = %d\n", addStudentInfoInDataBase.register_id);
         printf("\n\t\t\tStudent name = %s", addStudentInfoInDataBase.studentName);
         printf("\t\t\tFather Name = %s", addStudentInfoInDataBase.fatherName);
-        printf("\n\t\t\tStudent Address = %s", addStudentInfoInDataBase.studentAdaysr);
-        printf("\t\t\tStudent Admission dob =  (%d/%d/%d)", addStudentInfoInDataBase.studentJoiningdob.days,
-               addStudentInfoInDataBase.studentJoiningdob.month, addStudentInfoInDataBase.studentJoiningdob.year);
+        printf("\n\t\t\tStudent Address = %s", addStudentInfoInDataBase.studentAddress);
+        printf("\t\t\tStudent Admission dob =  (%d/%d/%d)", addStudentInfoInDataBase.studentDob.days,
+               addStudentInfoInDataBase.studentDob.month, addStudentInfoInDataBase.studentDob.year);
     }
     else
     {
@@ -228,9 +228,9 @@ void viewStudent()
         printf("\t\t\tStudent Register No. = %u\n", addStudentInfoInDataBase.register_id);
         printf("\t\t\tStudent Name = %s", addStudentInfoInDataBase.studentName);
         printf("\t\t\tFather Name = %s", addStudentInfoInDataBase.fatherName);
-        printf("\t\t\tStudent Address = %s", addStudentInfoInDataBase.studentAdaysr);
-        printf("\t\t\tStudent Dob =  (%d/%d/%d)\n\n", addStudentInfoInDataBase.studentJoiningdob.days,
-               addStudentInfoInDataBase.studentJoiningdob.month, addStudentInfoInDataBase.studentJoiningdob.year);
+        printf("\t\t\tStudent Address = %s", addStudentInfoInDataBase.studentAddress);
+        printf("\t\t\tStudent Dob =  (%d/%d/%d)\n\n", addStudentInfoInDataBase.studentDob.days,
+               addStudentInfoInDataBase.studentDob.month, addStudentInfoInDataBase.studentDob.year);
         found = 1;
         ++countStudent;
     }

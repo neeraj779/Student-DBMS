@@ -2,7 +2,7 @@
 
 ---
 
-![image of voice assitant](ProjectBanner.png)
+![image of voice assitant](projectBanner.png)
 
 ---
 
@@ -32,22 +32,22 @@
 
 # Screenshots
 * Main Menu Screenshot
-![login menu](MainMenu.png)
+![login menu](mainMenu.png)
 
 * Login Menu Screenshot
 ![login menu](login.png)
 
 * Add Student Menu Screenshot
-![add menu](AddStudent.png)
+![add menu](addStudent.png)
 
 * Search Student Menu Screenshot
-![add menu](SearchStudent.png)
+![add menu](searchStudent.png)
 
 * View Student Menu Screenshot
-![add menu](ViewStudent.png)
+![add menu](viewStudent.png)
 
 * Delete Student Menu Screenshot
-![add menu](DeleteStudent.png)
+![add menu](deleteStudent.png)
 
 * Password Update Menu Screenshot
-![pass_update](PassUpdate.png)
+![pass_update](passUpdate.png)
