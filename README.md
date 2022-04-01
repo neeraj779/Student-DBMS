@@ -31,11 +31,23 @@
 - This project is a Command line utility or console application which uses C programming language.
 
 # Screenshots
- * login menu screenshot
+* Main Menu Screenshot
+![login menu](MainMenu.png)
+
+* Login Menu Screenshot
 ![login menu](login.png)
 
- * Add student menu screenshot
-![add menu](add.png)
+* Add Student Menu Screenshot
+![add menu](AddStudent.png)
 
- * credential update menu screenshot
+* Search Student Menu Screenshot
+![add menu](SearchStudent.png)
+
+* View Student Menu Screenshot
+![add menu](ViewStudent.png)
+
+* Delete Student Menu Screenshot
+![add menu](DeleteStudent.png)
+
+* Password Update Menu Screenshot
 ![pass_update](PassUpdate.png)

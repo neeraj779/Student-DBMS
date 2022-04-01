@@ -7,23 +7,26 @@
 
 typedef struct
 {
+    char username[30];
+    char password[20];
+} sathyabama_staff_login;
+
+typedef struct
+{
     int year;
     int month;
     int days;
-} Date;
-typedef struct
-{
-    char username[30];
-    char password[20];
-} sFileHeader;
+} dob;
+
 typedef struct
 {
     unsigned int register_id;
     char fatherName[50];
     char studentName[50];
     char studentAdaysr[300];
-    Date studentJoiningDate;
-} s_StudentInfo;
+    dob studentJoiningdob;
+} sathyabama_student_info;
+
 void printMessageCenter(const char *message)
 {
     int len = 0;
@@ -39,10 +42,9 @@ void printMessageCenter(const char *message)
 void headMessage(const char *message)
 {
     system("cls");
-    printf("\n\t\t\t                Sathyabama Student Record Management System");
-    printf("\n\t\t\t-------------------------------------------------------------------------\n");
+    printf("\n\t\t\t                  Sathyabama Student Record Management System");
+    printf("\n\t\t\t\n");
     printMessageCenter(message);
-    printf("\n\t\t\t-------------------------------------------------------------------------");
 }
 int isNameValid(const char *name)
 {
@@ -66,7 +68,7 @@ int IsLeapYear(int year)
              (year % 100 != 0)) ||
             (year % 400 == 0));
 }
-int isValidaysate(Date *validaysate)
+int isValidaysate(dob *validaysate)
 {
     if (validaysate->year > 9999 ||
         validaysate->year < 1900)
@@ -89,7 +91,7 @@ int isValidaysate(Date *validaysate)
 }
 void addStudentInDataBase()
 {
-    s_StudentInfo addStudentInfoInDataBase = {0};
+    sathyabama_student_info addStudentInfoInDataBase = {0};
     FILE *fp = NULL;
     int status = 0;
     fp = fopen("data.bin", "ab+");
@@ -100,7 +102,7 @@ void addStudentInDataBase()
     }
     headMessage("Add New Students");
     printf("\n\n\t\t\tENTER STUDENT DETAILS BELOW : ");
-    printf("\n\t\t\t--------------------------------------------------------------------------\n");
+    printf("\n\t\t\t\n");
     printf("\n\t\t\tRegister No  = ");
     fflush(stdin);
     scanf("%u", &addStudentInfoInDataBase.register_id);
@@ -142,12 +144,12 @@ void addStudentInDataBase()
     } while (!status);
     do
     {
-        printf("\n\t\t\tEnter date of birth : ");
-        scanf("%d/%d/%d", &addStudentInfoInDataBase.studentJoiningDate.days, &addStudentInfoInDataBase.studentJoiningDate.month, &addStudentInfoInDataBase.studentJoiningDate.year);
-        status = isValidaysate(&addStudentInfoInDataBase.studentJoiningDate);
+        printf("\n\t\t\tEnter dob of birth : ");
+        scanf("%d/%d/%d", &addStudentInfoInDataBase.studentJoiningdob.days, &addStudentInfoInDataBase.studentJoiningdob.month, &addStudentInfoInDataBase.studentJoiningdob.year);
+        status = isValidaysate(&addStudentInfoInDataBase.studentJoiningdob);
         if (!status)
         {
-            printf("\n\t\t\tPlease enter a valid date.\n");
+            printf("\n\t\t\tPlease enter a valid dob.\n");
         }
     } while (!status);
     fwrite(&addStudentInfoInDataBase, sizeof(addStudentInfoInDataBase), 1, fp);
@@ -157,7 +159,7 @@ void searchStudent()
 {
     int found = 0;
     int studentId = 0;
-    s_StudentInfo addStudentInfoInDataBase = {0};
+    sathyabama_student_info addStudentInfoInDataBase = {0};
     FILE *fp = NULL;
     fp = fopen("data.bin", "rb");
     if (fp == NULL)
@@ -166,7 +168,7 @@ void searchStudent()
         exit(1);
     }
     headMessage("SEARCH STUDENTS");
-    if (fseek(fp, sizeof(sFileHeader), SEEK_SET) != 0)
+    if (fseek(fp, sizeof(sathyabama_staff_login), SEEK_SET) != 0)
     {
         fclose(fp);
         printf("\n\t\t\tFacing issue while reading file\n");
@@ -189,8 +191,8 @@ void searchStudent()
         printf("\n\t\t\tStudent name = %s", addStudentInfoInDataBase.studentName);
         printf("\t\t\tFather Name = %s", addStudentInfoInDataBase.fatherName);
         printf("\n\t\t\tStudent Address = %s", addStudentInfoInDataBase.studentAdaysr);
-        printf("\t\t\tStudent Admission Date =  (%d/%d/%d)", addStudentInfoInDataBase.studentJoiningDate.days,
-               addStudentInfoInDataBase.studentJoiningDate.month, addStudentInfoInDataBase.studentJoiningDate.year);
+        printf("\t\t\tStudent Admission dob =  (%d/%d/%d)", addStudentInfoInDataBase.studentJoiningdob.days,
+               addStudentInfoInDataBase.studentJoiningdob.month, addStudentInfoInDataBase.studentJoiningdob.year);
     }
     else
     {
@@ -204,7 +206,7 @@ void searchStudent()
 void viewStudent()
 {
     int found = 0;
-    s_StudentInfo addStudentInfoInDataBase = {0};
+    sathyabama_student_info addStudentInfoInDataBase = {0};
     FILE *fp = NULL;
     unsigned int countStudent = 1;
     headMessage("VIEW STUDENT DETAILS");
@@ -214,7 +216,7 @@ void viewStudent()
         printf("File is not opened\n");
         exit(1);
     }
-    if (fseek(fp, sizeof(sFileHeader), SEEK_SET) != 0)
+    if (fseek(fp, sizeof(sathyabama_staff_login), SEEK_SET) != 0)
     {
         fclose(fp);
         printf("Facing issue while reading file\n");
@@ -223,12 +225,12 @@ void viewStudent()
     while (fread(&addStudentInfoInDataBase, sizeof(addStudentInfoInDataBase), 1, fp))
     {
         printf("\n\t\t\tStudent Count = %d\n\n", countStudent);
-        printf("\t\t\tStudent id = %u\n", addStudentInfoInDataBase.register_id);
+        printf("\t\t\tStudent Register No. = %u\n", addStudentInfoInDataBase.register_id);
         printf("\t\t\tStudent Name = %s", addStudentInfoInDataBase.studentName);
         printf("\t\t\tFather Name = %s", addStudentInfoInDataBase.fatherName);
-        printf("\t\t\tStudent Adaysress = %s", addStudentInfoInDataBase.studentAdaysr);
-        printf("\t\t\tStudent Admission Date(day/month/year) =  (%d/%d/%d)\n\n", addStudentInfoInDataBase.studentJoiningDate.days,
-               addStudentInfoInDataBase.studentJoiningDate.month, addStudentInfoInDataBase.studentJoiningDate.year);
+        printf("\t\t\tStudent Address = %s", addStudentInfoInDataBase.studentAdaysr);
+        printf("\t\t\tStudent Dob =  (%d/%d/%d)\n\n", addStudentInfoInDataBase.studentJoiningdob.days,
+               addStudentInfoInDataBase.studentJoiningdob.month, addStudentInfoInDataBase.studentJoiningdob.year);
         found = 1;
         ++countStudent;
     }
@@ -245,8 +247,8 @@ void deleteStudent()
 {
     int found = 0;
     int studentDelete = 0;
-    sFileHeader fileHeaderInfo = {0};
-    s_StudentInfo addStudentInfoInDataBase = {0};
+    sathyabama_staff_login fileHeaderInfo = {0};
+    sathyabama_student_info addStudentInfoInDataBase = {0};
     FILE *fp = NULL;
     FILE *tmpFp = NULL;
     headMessage("Delete Student Details");
@@ -263,9 +265,9 @@ void deleteStudent()
         printf("File is not opened\n");
         exit(1);
     }
-    fread(&fileHeaderInfo, sizeof(sFileHeader), 1, fp);
-    fwrite(&fileHeaderInfo, sizeof(sFileHeader), 1, tmpFp);
-    printf("\n\t\t\tEnter Student Register No. for delete:");
+    fread(&fileHeaderInfo, sizeof(sathyabama_staff_login), 1, fp);
+    fwrite(&fileHeaderInfo, sizeof(sathyabama_staff_login), 1, tmpFp);
+    printf("\n\t\t\tEnter Student Register No. for deletion: ");
     scanf("%d", &studentDelete);
     while (fread(&addStudentInfoInDataBase, sizeof(addStudentInfoInDataBase), 1, fp))
     {
@@ -278,7 +280,7 @@ void deleteStudent()
             found = 1;
         }
     }
-    (found) ? printf("\n\t\t\tRecord deleted successfully.....") : printf("\n\t\t\tRecord not found");
+    (found) ? printf("\n\t\t\tRecord deleted successfully...") : printf("\n\t\t\tRecord not found");
     fclose(fp);
     fclose(tmpFp);
     remove("data.bin");
@@ -286,18 +288,18 @@ void deleteStudent()
 }
 void updateCredential(void)
 {
-    sFileHeader fileHeaderInfo = {0};
+    sathyabama_staff_login fileHeaderInfo = {0};
     FILE *fp = NULL;
     unsigned char userName[30] = {0};
     unsigned char password[20] = {0};
-    headMessage("Update Credential");
+    headMessage("update Credential");
     fp = fopen("data.bin", "rb+");
     if (fp == NULL)
     {
         printf("File is not opened\n");
         exit(1);
     }
-    fread(&fileHeaderInfo, sizeof(sFileHeader), 1, fp);
+    fread(&fileHeaderInfo, sizeof(sathyabama_staff_login), 1, fp);
     if (fseek(fp, 0, SEEK_SET) != 0)
     {
         fclose(fp);
@@ -312,7 +314,7 @@ void updateCredential(void)
     fgets(password, 20, stdin);
     strncpy(fileHeaderInfo.username, userName, sizeof(userName));
     strncpy(fileHeaderInfo.password, password, sizeof(password));
-    fwrite(&fileHeaderInfo, sizeof(sFileHeader), 1, fp);
+    fwrite(&fileHeaderInfo, sizeof(sathyabama_staff_login), 1, fp);
     fclose(fp);
     printf("\n\t\t\tYour Password has been changed successfully");
     printf("\n\t\t\tLogin Again:");
@@ -330,7 +332,7 @@ void menu()
         printf("\n\t\t\t2. Search Student");
         printf("\n\t\t\t3. View Student");
         printf("\n\t\t\t4. Delete Student");
-        printf("\n\t\t\t5. Update Password");
+        printf("\n\t\t\t5. update Password");
         printf("\n\t\t\t0. Exit");
         printf("\n\n\n\t\t\tEnter choice => ");
         scanf("%d", &choice);
@@ -366,7 +368,7 @@ void login()
     unsigned char userName[30] = {0};
     unsigned char password[20] = {0};
     int L = 0;
-    sFileHeader fileHeaderInfo = {0};
+    sathyabama_staff_login fileHeaderInfo = {0};
     FILE *fp = NULL;
     headMessage("Sathyabama Staff Login");
     fp = fopen("data.bin", "rb");
@@ -375,7 +377,7 @@ void login()
         printf("File is not opened\n");
         exit(1);
     }
-    fread(&fileHeaderInfo, sizeof(sFileHeader), 1, fp);
+    fread(&fileHeaderInfo, sizeof(sathyabama_staff_login), 1, fp);
     fclose(fp);
     do
     {
@@ -412,13 +414,13 @@ int isFileExists(const char *path)
     }
     return status;
 }
-void init()
+void runner()
 {
     FILE *fp = NULL;
     int status = 0;
     const char defaultUsername[] = "Techzamia\n";
     const char defaultPassword[] = "Sathyabama\n";
-    sFileHeader fileHeaderInfo = {0};
+    sathyabama_staff_login fileHeaderInfo = {0};
     status = isFileExists("data.bin");
     if (!status)
     {
@@ -427,14 +429,14 @@ void init()
         {
             strncpy(fileHeaderInfo.password, defaultPassword, sizeof(defaultPassword));
             strncpy(fileHeaderInfo.username, defaultUsername, sizeof(defaultUsername));
-            fwrite(&fileHeaderInfo, sizeof(sFileHeader), 1, fp);
+            fwrite(&fileHeaderInfo, sizeof(sathyabama_staff_login), 1, fp);
             fclose(fp);
         }
     }
 }
 int main()
 {
-    init();
+    runner();
     login();
     return 0;
 }
