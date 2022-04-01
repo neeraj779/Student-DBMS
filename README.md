@@ -2,7 +2,7 @@
 
 ---
 
-![image of voice assitant](project_banner.png)
+![image of voice assitant](ProjectBanner.png)
 
 ---
 
@@ -38,4 +38,4 @@
 ![add menu](add.png)
 
  * credential update menu screenshot
-![pass_update](pass_update.png)
+![pass_update](PassUpdate.png)
