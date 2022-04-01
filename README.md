@@ -1,4 +1,4 @@
-<h3 align=center><b> ✨ Sathyabama Student Record System using c/c++ ✨</b></h3>
+<h3 align=center><b>:star: Sathyabama Student Record System using c/c++ :star:</b></h3>
 
 ---
 
