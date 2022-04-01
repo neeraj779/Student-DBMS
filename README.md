@@ -25,17 +25,17 @@
 &emsp;:three: fwrite<br />
 &emsp;:four: functions<br />
 &emsp;:five: loops<br />
-&emsp;:six:struct datatype<br />
-&emsp;:seven:if else<br />
+&emsp;:six: struct datatype<br />
+&emsp;:seven: if else<br />
 
-- This project is a Command line utility or console application whic usese C programming language.
+- This project is a Command line utility or console application which uses C programming language.
 
 # Screenshots
- * login menu screenshot<br />
+ * login menu screenshot
 ![login menu](login.png)
 
- * Add student menu screenshot<br />
+ * Add student menu screenshot
 ![add menu](add.png)
 
- * credentail update menu screenshot<br />
+ * credential update menu screenshot
 ![pass_update](pass_update.png)
