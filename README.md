@@ -31,16 +31,16 @@
 
 ---
 
-# Project Demo Video
-
-https://user-images.githubusercontent.com/85169876/161279455-45849d66-ecb3-44b8-93ff-fcd1ae4891da.mp4
-
----
-
 :key: Default password and username is mentioned below.
 
 - Username : Techzamia
 - Password : Sathyabama
+
+---
+
+# Project Demo Video
+
+https://user-images.githubusercontent.com/85169876/161279455-45849d66-ecb3-44b8-93ff-fcd1ae4891da.mp4
 
 ---
 
