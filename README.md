@@ -31,7 +31,7 @@
 
 # Project Demo Video
 
-https://user-images.githubusercontent.com/85169876/161247045-5f9e5a75-e08b-4660-89ea-66e39bc4db29.mp4
+https://user-images.githubusercontent.com/85169876/161279455-45849d66-ecb3-44b8-93ff-fcd1ae4891da.mp4
 
 # Screenshots
 
@@ -55,3 +55,8 @@ https://user-images.githubusercontent.com/85169876/161247045-5f9e5a75-e08b-4660-
 
 - Password Update Menu Screenshot
   ![pass_update](/assets/passUpdate.png)
+
+# :eight_spoked_asterisk: Default password and username is mentioned below.
+
+- Username : Techzamia
+- Password : Sathyabama
