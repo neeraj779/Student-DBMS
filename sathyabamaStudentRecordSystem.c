@@ -27,7 +27,7 @@ typedef struct
     dob studentDob;
 } sathyabama_student_info;
 
-void printMessageCenter(const char *message)
+void sathyabamaMessageCenter(const char *message)
 {
     int len = 0;
     int pos = 0;
@@ -39,12 +39,12 @@ void printMessageCenter(const char *message)
     }
     printf("%s", message);
 }
-void headMessage(const char *message)
+void Message(const char *message)
 {
     system("cls");
     printf("\n\t\t\t                  Sathyabama Student Record Management System");
     printf("\n\t\t\t\n");
-    printMessageCenter(message);
+    sathyabamaMessageCenter(message);
 }
 int isNameValid(const char *name)
 {
@@ -97,10 +97,10 @@ void addStudentInDataBase()
     fp = fopen("data.bin", "ab+");
     if (fp == NULL)
     {
-        printf("File is not opened\n");
+        printf("No access to file\n");
         exit(1);
     }
-    headMessage("Add New Students");
+    Message("Add New Students");
     printf("\n\n\t\t\tENTER STUDENT DETAILS BELOW : ");
     printf("\n\t\t\t\n");
     printf("\n\t\t\tRegister No  = ");
@@ -115,7 +115,7 @@ void addStudentInDataBase()
         status = isNameValid(addStudentInfoInDataBase.studentName);
         if (!status)
         {
-            printf("\n\t\t\tName contain invalid character. Please enter again.");
+            printf("\n\t\t\tInvalid input");
         }
     } while (!status);
 
@@ -127,7 +127,7 @@ void addStudentInDataBase()
         status = isNameValid(addStudentInfoInDataBase.fatherName);
         if (!status)
         {
-            printf("\n\t\t\tName contain invalid character. Please enter again.");
+            printf("\n\t\t\tInvalid input");
         }
     } while (!status);
 
@@ -139,7 +139,7 @@ void addStudentInDataBase()
         status = isNameValid(addStudentInfoInDataBase.studentAddress);
         if (!status)
         {
-            printf("\n\t\t\tName contain invalid character. Please enter again.");
+            printf("\n\t\t\tInvalid input");
         }
     } while (!status);
     do
@@ -164,14 +164,14 @@ void searchStudent()
     fp = fopen("data.bin", "rb");
     if (fp == NULL)
     {
-        printf("\n\t\t\tFile is not opened\n");
+        printf("\n\t\t\tNo access to file\n");
         exit(1);
     }
-    headMessage("SEARCH STUDENTS");
+    Message("SEARCH STUDENTS");
     if (fseek(fp, sizeof(sathyabama_staff_login), SEEK_SET) != 0)
     {
         fclose(fp);
-        printf("\n\t\t\tFacing issue while reading file\n");
+        printf("\n\t\t\terror while reading file content\n");
         exit(1);
     }
     printf("\n\n\t\t\tEnter Student Register No. to search: ");
@@ -209,17 +209,17 @@ void viewStudent()
     sathyabama_student_info addStudentInfoInDataBase = {0};
     FILE *fp = NULL;
     unsigned int countStudent = 1;
-    headMessage("VIEW STUDENT DETAILS");
+    Message("VIEW STUDENT DETAILS");
     fp = fopen("data.bin", "rb");
     if (fp == NULL)
     {
-        printf("File is not opened\n");
+        printf("No access to file\n");
         exit(1);
     }
     if (fseek(fp, sizeof(sathyabama_staff_login), SEEK_SET) != 0)
     {
         fclose(fp);
-        printf("Facing issue while reading file\n");
+        printf("error while reading file content\n");
         exit(1);
     }
     while (fread(&addStudentInfoInDataBase, sizeof(addStudentInfoInDataBase), 1, fp))
@@ -251,18 +251,18 @@ void deleteStudent()
     sathyabama_student_info addStudentInfoInDataBase = {0};
     FILE *fp = NULL;
     FILE *tmpFp = NULL;
-    headMessage("Delete Student Details");
+    Message("Delete Student Details");
     fp = fopen("data.bin", "rb");
     if (fp == NULL)
     {
-        printf("File is not opened\n");
+        printf("No access to file\n");
         exit(1);
     }
     tmpFp = fopen("tmp.bin", "wb");
     if (tmpFp == NULL)
     {
         fclose(fp);
-        printf("File is not opened\n");
+        printf("No access to file\n");
         exit(1);
     }
     fread(&fileHeaderInfo, sizeof(sathyabama_staff_login), 1, fp);
@@ -292,11 +292,11 @@ void updateCredential(void)
     FILE *fp = NULL;
     unsigned char userName[30] = {0};
     unsigned char password[20] = {0};
-    headMessage("update Credential");
+    Message("update Credential");
     fp = fopen("data.bin", "rb+");
     if (fp == NULL)
     {
-        printf("File is not opened\n");
+        printf("No access to file\n");
         exit(1);
     }
     fread(&fileHeaderInfo, sizeof(sathyabama_staff_login), 1, fp);
@@ -327,7 +327,7 @@ void menu()
     int choice = 0;
     do
     {
-        headMessage("MAIN MENU");
+        Message("MAIN MENU");
         printf("\n\n\n\t\t\t1. Add Student");
         printf("\n\t\t\t2. Search Student");
         printf("\n\t\t\t3. View Student");
@@ -354,11 +354,11 @@ void menu()
             updateCredential();
             break;
         case 0:
-            printf("\n\n\n\t\t\t\tThank you!!!\n\n\n\n\n");
+            printf("\n\n\n\t\t\t\tThank you for using sathyabama student record system!\n\n\n\n\n");
             exit(1);
             break;
         default:
-            printf("\n\n\n\t\t\tINVALID INPUT!!! Try again...");
+            printf("\n\n\n\t\t\tInvalid input!");
         }
     } while (choice != 0);
 }
@@ -370,11 +370,11 @@ void login()
     int L = 0;
     sathyabama_staff_login fileHeaderInfo = {0};
     FILE *fp = NULL;
-    headMessage("Sathyabama Staff Login");
+    Message("Sathyabama Staff Login");
     fp = fopen("data.bin", "rb");
     if (fp == NULL)
     {
-        printf("File is not opened\n");
+        printf("No access to file\n");
         exit(1);
     }
     fread(&fileHeaderInfo, sizeof(sathyabama_staff_login), 1, fp);
@@ -391,14 +391,14 @@ void login()
         }
         else
         {
-            printf("\t\t\t\tLogin Failed Enter Again Username & Password\n\n");
+            printf("\t\t\t\tLogin Failed Plese Check Your Password and Username Again.\n\n");
             L++;
         }
     } while (L <= 3);
     if (L > 3)
     {
-        headMessage("Login Failed");
-        printf("\t\t\t\tSorry,Unknown User.");
+        Message("Login Failed");
+        printf("\t\t\t\tUnknown User.");
         getch();
         system("cls");
     }
