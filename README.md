@@ -2,7 +2,7 @@
 
 ---
 
-![image of voice assitant](assets/projectBanner.png)
+![image of voice assitant](/assets/projectBanner.png)
 
 ---
 
@@ -25,29 +25,29 @@
 &emsp;:three: fwrite<br />
 &emsp;:four: functions<br />
 &emsp;:five: loops<br />
-&emsp;:six: struct datatype<br />
+&emsp;:six: struct dat/atype<br />
 &emsp;:seven: if else<br />
 
 - This project is a Command line utility or console application which uses C programming language.
 
 # Screenshots
 * Main Menu Screenshot
-![login menu](assets/mainMenu.png)
+![login menu](/assets/mainMenu.png)
 
 * Login Menu Screenshot
-![login menu](assets/login.png)
+![login menu](/assets/login.png)
 
 * Add Student Menu Screenshot
-![add menu](assets/addStudent.png)
+![add menu](/assets/addStudent.png)
 
 * Search Student Menu Screenshot
-![add menu](assets/searchStudent.png)
+![add menu](/assets/searchStudent.png)
 
 * View Student Menu Screenshot
-![add menu](assets/viewStudent.png)
+![add menu](/assets/viewStudent.png)
 
 * Delete Student Menu Screenshot
-![add menu](assets/deleteStudent.png)
+![add menu](/assets/deleteStudent.png)
 
 * Password Update Menu Screenshot
-![pass_update](assets/passUpdate.png)
+![pass_update](/assets/passUpdate.png)
