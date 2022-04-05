@@ -40,7 +40,7 @@
 
 # Project Demo Video
 
-https://user-images.githubusercontent.com/85169876/161279455-45849d66-ecb3-44b8-93ff-fcd1ae4891da.mp4
+https://user-images.githubusercontent.com/85169876/161754431-f2d2fd59-71f6-4793-9cae-30dfbc1cc567.mp4
 
 ---
 
@@ -66,4 +66,3 @@ https://user-images.githubusercontent.com/85169876/161279455-45849d66-ecb3-44b8-
 
 - Password Update Menu Screenshot
   ![pass_update](/assets/passUpdate.png)
-
