@@ -17,8 +17,6 @@
 - search the students
 - update login password
 
-:round_pushpin: I have included login screen in Sathyabama Student Record System, So that only Sathyabama Staffs will be able to login to this application in order to protect the data.
-
 :zap: In this project i have used some of following C/C++ concepts:
 
 &emsp;:one: fopen <br />
@@ -28,6 +26,12 @@
 &emsp;:five: loops<br />
 &emsp;:six: struct datatype<br />
 &emsp;:seven: if else<br />
+
+---
+
+:round_pushpin: I have included login screen in Sathyabama Student Record System, So that only Sathyabama Staffs will be able to login to this application in order to protect the data.
+
+- All data which is entered by user is saved in [data.bin](https://github.com/neeraj779/Techzamia_Project/blob/main/data.bin) file and no one can access it without password.
 
 ---
 
