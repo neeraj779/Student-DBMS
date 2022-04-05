@@ -363,6 +363,7 @@ void menu()
         }
     } while (choice != 0);
 }
+
 void login()
 {
     system("cls");
@@ -404,6 +405,7 @@ void login()
         system("cls");
     }
 }
+
 int isFileExists(const char *path)
 {
     FILE *fp = fopen(path, "rb");
@@ -435,6 +437,7 @@ void runner()
         }
     }
 }
+
 int main()
 {
     runner();
