@@ -417,6 +417,7 @@ int isFileExists(const char *path)
     }
     return status;
 }
+
 void runner()
 {
     FILE *fp = NULL;
