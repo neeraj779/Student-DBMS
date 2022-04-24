@@ -422,8 +422,8 @@ void runner()
 {
     FILE *fp = NULL;
     int status = 0;
-    const char defaultUsername[] = "Techzamia\n";
-    const char defaultPassword[] = "Sathyabama\n";
+    const char defaultUsername[] = "Neeraj\n";
+    const char defaultPassword[] = "neeraj\n";
     sathyabama_staff_login fileHeaderInfo = {0};
     status = isFileExists("data.bin");
     if (!status)
