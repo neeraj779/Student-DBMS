@@ -36,8 +36,8 @@
 
 :key: Default password and username is mentioned below.
 
-- Username : Techzamia
-- Password : Sathyabama
+- Username : Neeraj
+- Password : neeraj
 
 ---
 
