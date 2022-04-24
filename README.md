@@ -1,4 +1,4 @@
-<h3 align=center><b>:star: Sathyabama Student Record System using c/c++ :star:</b></h3>
+<h3 align=center><b>:star: Sathyabama Student Database Management System using c/c++ :star:</b></h3>
 
 ---
 
@@ -9,26 +9,16 @@
 <h1 align="center">Hi <img src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/Hi.gif" width="29px"/></h1>
 
 
-:arrow_forward: In this Sathyabama Student Record System using c/c++ project, we can do basic Student Record tasks like :
+:arrow_forward: In this project, we can do basic Student Record Management tasks like :
 
 - adding the student info
 - view the added student
 - search the students
 - update login password
-
-:zap: In this project i have used some of following C/C++ concepts:
-
-&emsp;:one: fopen <br />
-&emsp;:two: fread <br />
-&emsp;:three: fwrite<br />
-&emsp;:four: functions<br />
-&emsp;:five: loops<br />
-&emsp;:six: struct datatype<br />
-&emsp;:seven: if else<br />
-
+- 
 ---
 
-:round_pushpin: I have included login screen in Sathyabama Student Record System, So that only Sathyabama Staffs will be able to login to this application in order to protect the data.
+:round_pushpin: I have included login screen in this project, So that only Sathyabama Staffs will be able to login to this application in order to protect the data.
 
 - All data which is entered by user is saved in [data.bin](https://github.com/neeraj779/Techzamia_Project/blob/main/data.bin) file and no one can access it without password.
 
