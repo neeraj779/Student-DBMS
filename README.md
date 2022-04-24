@@ -8,7 +8,6 @@
 
 <h1 align="center">Hi <img src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/Hi.gif" width="29px"/></h1>
 
-### I have made my project on Sathyabama Student Record System using c/c++ for the Round 3 of Techzamia.
 
 :arrow_forward: In this Sathyabama Student Record System using c/c++ project, we can do basic Student Record tasks like :
 
