@@ -15,7 +15,7 @@
 - view the added student
 - search the students
 - update login password
-- 
+
 ---
 
 :round_pushpin: I have included login screen in this project, So that only Sathyabama Staffs will be able to login to this application in order to protect the data.
