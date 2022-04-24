@@ -1,4 +1,4 @@
-<h3 align=center><b>:star: Sathyabama Student Database Management System using c/c++ :star:</b></h3>
+<h3 align=center><b>:star: Sathyabama Student Database Management System :star:</b></h3>
 
 ---
 
