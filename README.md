@@ -2,7 +2,7 @@
 
 ---
 
-![image of voice assitant](/assets/projectBanner.png)
+![banner](https://user-images.githubusercontent.com/85169876/164960179-b7504346-ec95-4f23-828c-6dee132d228f.png)
 
 ---
 
