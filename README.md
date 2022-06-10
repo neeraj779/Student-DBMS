@@ -6,9 +6,6 @@
 
 ---
 
-<h1 align="center">Hi <img src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/Hi.gif" width="29px"/></h1>
-
-
 :arrow_forward: In this project, we can do basic Student Record Management tasks like :
 
 - adding the student info
